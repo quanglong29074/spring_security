@@ -1,0 +1,18 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="en">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HomePage</title>
+</head>
+<body>
+<h1>Home Page</h1>
+<div sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_OPERATION')">
+    <h1>Only roles: Admin and Operation</h1>
+    <a href="/dashboard">Dash Board</a>
+</div>
+<a href="/logout"> logout</a>
+
+</body>
+</html>
